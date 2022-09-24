@@ -14,6 +14,7 @@ class FollowerListVC: UIViewController {
 
         view.backgroundColor = .systemBackground
         navigationController?.isNavigationBarHidden = false
+        
     }
     
 

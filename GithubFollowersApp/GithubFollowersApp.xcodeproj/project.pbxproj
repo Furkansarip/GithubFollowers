@@ -20,6 +20,7 @@
 		74B9BE9B28DF4A10000DBE05 /* GFTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B9BE9A28DF4A10000DBE05 /* GFTitleLabel.swift */; };
 		74B9BE9D28DF4B18000DBE05 /* GFBodyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B9BE9C28DF4B18000DBE05 /* GFBodyLabel.swift */; };
 		74B9BE9F28DF4D33000DBE05 /* GFAlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B9BE9E28DF4D33000DBE05 /* GFAlertVC.swift */; };
+		74B9BEA128DF6C27000DBE05 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B9BEA028DF6C27000DBE05 /* UIViewController+Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		74B9BE9A28DF4A10000DBE05 /* GFTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFTitleLabel.swift; sourceTree = "<group>"; };
 		74B9BE9C28DF4B18000DBE05 /* GFBodyLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFBodyLabel.swift; sourceTree = "<group>"; };
 		74B9BE9E28DF4D33000DBE05 /* GFAlertVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFAlertVC.swift; sourceTree = "<group>"; };
+		74B9BEA028DF6C27000DBE05 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +86,7 @@
 				74B9BE9A28DF4A10000DBE05 /* GFTitleLabel.swift */,
 				74B9BE9C28DF4B18000DBE05 /* GFBodyLabel.swift */,
 				74B9BE9E28DF4D33000DBE05 /* GFAlertVC.swift */,
+				74B9BEA028DF6C27000DBE05 /* UIViewController+Ext.swift */,
 			);
 			path = GithubFollowersApp;
 			sourceTree = "<group>";
@@ -160,6 +163,7 @@
 			files = (
 				74B9BE9128DCA02B000DBE05 /* SearchVC.swift in Sources */,
 				74B9BE8128DC99AB000DBE05 /* ViewController.swift in Sources */,
+				74B9BEA128DF6C27000DBE05 /* UIViewController+Ext.swift in Sources */,
 				74B9BE9528DCB05C000DBE05 /* GFButton.swift in Sources */,
 				74B9BE9328DCA03A000DBE05 /* FavoritesListVC.swift in Sources */,
 				74B9BE7D28DC99AB000DBE05 /* AppDelegate.swift in Sources */,
