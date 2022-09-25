@@ -46,7 +46,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     func configureNavBar(){
         UINavigationBar.appearance().tintColor = .systemGreen
-        UINavigationBar.appearance().prefersLargeTitles = true
+        
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
