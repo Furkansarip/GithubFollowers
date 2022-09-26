@@ -69,7 +69,7 @@ class GFAlertVC: UIViewController {
         ])
     }
     
-    func configureActionButton(){
+    private func configureActionButton(){
         containerView.addSubview(actionButton)
         actionButton.addTarget(self, action: #selector(dismissVC), for: .touchUpInside)
         actionButton.setTitle(buttonTitle ?? "Wrong", for: .normal)

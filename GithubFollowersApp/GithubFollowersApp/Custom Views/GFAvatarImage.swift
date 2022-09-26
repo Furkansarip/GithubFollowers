@@ -10,9 +10,11 @@ import UIKit
 class GFAvatarImage: UIImageView {
 
     
-    let placeholder = UIImage(named: "avatar-placeholder-dark")
+    let placeholder = UIImage(named: "avatar-placeholder")
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
+       configure()
     }
     
     required init?(coder: NSCoder) {
@@ -24,6 +26,7 @@ class GFAvatarImage: UIImageView {
         image = placeholder
         clipsToBounds = true
         translatesAutoresizingMaskIntoConstraints = false
+        
     }
 
 }

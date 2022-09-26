@@ -12,7 +12,7 @@ struct NetworkManager {
     static let shared = NetworkManager()
     private init(){}
     
-    func getFollowers(username:String,page:Int,completion:@escaping(_ result:Result<[Follower]?,GFError>)->Void){
+    func getFollowers(for username:String,page:Int,completion:@escaping(_ result:Result<[Follower],GFError>)->Void){
         let endpoint = baseURL + "/users/\(username)/followers?per_page=100&page\(page)"
         
         guard let url = URL(string: endpoint) else {
