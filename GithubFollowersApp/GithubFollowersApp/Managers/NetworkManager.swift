@@ -6,9 +6,11 @@
 //
 
 import Foundation
+import UIKit
 
 struct NetworkManager {
-    let baseURL = "https://api.github.com"
+    private let baseURL = "https://api.github.com"
+    let cache = NSCache<NSString,UIImage>()
     static let shared = NetworkManager()
     private init(){}
     

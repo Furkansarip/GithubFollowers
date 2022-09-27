@@ -26,6 +26,7 @@
 		74B9BEB128E08504000DBE05 /* ErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B9BEB028E08504000DBE05 /* ErrorMessage.swift */; };
 		74B9BEB428E0A6A6000DBE05 /* FollowerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B9BEB328E0A6A6000DBE05 /* FollowerCell.swift */; };
 		74B9BEB628E0A700000DBE05 /* GFAvatarImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B9BEB528E0A700000DBE05 /* GFAvatarImage.swift */; };
+		74E5B93A28E1BE6F00FFA32E /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E5B93928E1BE6F00FFA32E /* UIHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		74B9BEB028E08504000DBE05 /* ErrorMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessage.swift; sourceTree = "<group>"; };
 		74B9BEB328E0A6A6000DBE05 /* FollowerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerCell.swift; sourceTree = "<group>"; };
 		74B9BEB528E0A700000DBE05 /* GFAvatarImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFAvatarImage.swift; sourceTree = "<group>"; };
+		74E5B93928E1BE6F00FFA32E /* UIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				74B9BEB028E08504000DBE05 /* ErrorMessage.swift */,
+				74E5B93928E1BE6F00FFA32E /* UIHelper.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -245,6 +248,7 @@
 				74B9BE9528DCB05C000DBE05 /* GFButton.swift in Sources */,
 				74B9BE9328DCA03A000DBE05 /* FavoritesListVC.swift in Sources */,
 				74B9BE7D28DC99AB000DBE05 /* AppDelegate.swift in Sources */,
+				74E5B93A28E1BE6F00FFA32E /* UIHelper.swift in Sources */,
 				74B9BE9F28DF4D33000DBE05 /* GFAlertVC.swift in Sources */,
 				74B9BE7F28DC99AB000DBE05 /* SceneDelegate.swift in Sources */,
 				74B9BEB428E0A6A6000DBE05 /* FollowerCell.swift in Sources */,
