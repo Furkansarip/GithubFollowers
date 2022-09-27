@@ -7,16 +7,16 @@
 
 import Foundation
 
-struct User {
-    var login : String
+struct User : Codable{
+    let login : String
     var name : String?
-    var avatarUrl : String
+    let avatarUrl : String
     var location : String?
     var bio : String?
-    var publicRepos : Int
-    var publicGists : Int
-    var htmlUrl : String
-    var following : Int
-    var followers : Int
-    var createdAt : String
+    let publicRepos : Int
+    let publicGists : Int
+    let htmlUrl : String
+    let following : Int
+    let followers : Int
+    let createdAt : String
 }
