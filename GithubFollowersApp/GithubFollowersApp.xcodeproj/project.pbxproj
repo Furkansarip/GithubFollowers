@@ -30,6 +30,11 @@
 		74DF6CB928E37B5000648D5B /* UserInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74DF6CB828E37B5000648D5B /* UserInfoVC.swift */; };
 		74DF6CBB28E5B0B600648D5B /* GFSecondaryTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74DF6CBA28E5B0B600648D5B /* GFSecondaryTitleLabel.swift */; };
 		74DF6CBD28E5B25B00648D5B /* GFUserInfoHeaderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74DF6CBC28E5B25B00648D5B /* GFUserInfoHeaderVC.swift */; };
+		74DF6CC028E5E5E900648D5B /* GFItemInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74DF6CBF28E5E5E900648D5B /* GFItemInfoView.swift */; };
+		74DF6CC228E5E9E400648D5B /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74DF6CC128E5E9E400648D5B /* Constant.swift */; };
+		74DF6CC428E5ED7A00648D5B /* GFItemInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74DF6CC328E5ED7A00648D5B /* GFItemInfoVC.swift */; };
+		74DF6CC628E5F1DE00648D5B /* GFRepoItemVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74DF6CC528E5F1DE00648D5B /* GFRepoItemVC.swift */; };
+		74DF6CC828E5F34900648D5B /* GFFollowerItemVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74DF6CC728E5F34900648D5B /* GFFollowerItemVC.swift */; };
 		74E5B93A28E1BE6F00FFA32E /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E5B93928E1BE6F00FFA32E /* UIHelper.swift */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +64,11 @@
 		74DF6CB828E37B5000648D5B /* UserInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoVC.swift; sourceTree = "<group>"; };
 		74DF6CBA28E5B0B600648D5B /* GFSecondaryTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFSecondaryTitleLabel.swift; sourceTree = "<group>"; };
 		74DF6CBC28E5B25B00648D5B /* GFUserInfoHeaderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFUserInfoHeaderVC.swift; sourceTree = "<group>"; };
+		74DF6CBF28E5E5E900648D5B /* GFItemInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFItemInfoView.swift; sourceTree = "<group>"; };
+		74DF6CC128E5E9E400648D5B /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		74DF6CC328E5ED7A00648D5B /* GFItemInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFItemInfoVC.swift; sourceTree = "<group>"; };
+		74DF6CC528E5F1DE00648D5B /* GFRepoItemVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFRepoItemVC.swift; sourceTree = "<group>"; };
+		74DF6CC728E5F34900648D5B /* GFFollowerItemVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFFollowerItemVC.swift; sourceTree = "<group>"; };
 		74E5B93928E1BE6F00FFA32E /* UIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -107,6 +117,7 @@
 		74B9BEA228DF6EF0000DBE05 /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
+				74DF6CBE28E5E5C800648D5B /* Views */,
 				74DF6CB528E3288400648D5B /* ViewControllers */,
 				74DF6CB428E3286600648D5B /* TextFields */,
 				74DF6CB328E3285E00648D5B /* ImageViews */,
@@ -169,6 +180,7 @@
 			children = (
 				74B9BEB028E08504000DBE05 /* ErrorMessage.swift */,
 				74E5B93928E1BE6F00FFA32E /* UIHelper.swift */,
+				74DF6CC128E5E9E400648D5B /* Constant.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -218,11 +230,30 @@
 		74DF6CB528E3288400648D5B /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				74DF6CC928E5F3E200648D5B /* ItemInfoVCs */,
 				74B9BE9E28DF4D33000DBE05 /* GFAlertVC.swift */,
-				74DF6CB628E328C400648D5B /* GFEmptyStateView.swift */,
 				74DF6CBC28E5B25B00648D5B /* GFUserInfoHeaderVC.swift */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		74DF6CBE28E5E5C800648D5B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				74DF6CB628E328C400648D5B /* GFEmptyStateView.swift */,
+				74DF6CBF28E5E5E900648D5B /* GFItemInfoView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		74DF6CC928E5F3E200648D5B /* ItemInfoVCs */ = {
+			isa = PBXGroup;
+			children = (
+				74DF6CC328E5ED7A00648D5B /* GFItemInfoVC.swift */,
+				74DF6CC528E5F1DE00648D5B /* GFRepoItemVC.swift */,
+				74DF6CC728E5F34900648D5B /* GFFollowerItemVC.swift */,
+			);
+			path = ItemInfoVCs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -297,14 +328,18 @@
 			files = (
 				74B9BE9128DCA02B000DBE05 /* SearchVC.swift in Sources */,
 				74B9BEA128DF6C27000DBE05 /* UIViewController+Ext.swift in Sources */,
+				74DF6CC028E5E5E900648D5B /* GFItemInfoView.swift in Sources */,
 				74B9BE9528DCB05C000DBE05 /* GFButton.swift in Sources */,
 				74DF6CBD28E5B25B00648D5B /* GFUserInfoHeaderVC.swift in Sources */,
 				74B9BE9328DCA03A000DBE05 /* FavoritesListVC.swift in Sources */,
+				74DF6CC428E5ED7A00648D5B /* GFItemInfoVC.swift in Sources */,
 				74B9BE7D28DC99AB000DBE05 /* AppDelegate.swift in Sources */,
 				74E5B93A28E1BE6F00FFA32E /* UIHelper.swift in Sources */,
 				74B9BE9F28DF4D33000DBE05 /* GFAlertVC.swift in Sources */,
 				74DF6CBB28E5B0B600648D5B /* GFSecondaryTitleLabel.swift in Sources */,
+				74DF6CC828E5F34900648D5B /* GFFollowerItemVC.swift in Sources */,
 				74B9BE7F28DC99AB000DBE05 /* SceneDelegate.swift in Sources */,
+				74DF6CC228E5E9E400648D5B /* Constant.swift in Sources */,
 				74B9BEB428E0A6A6000DBE05 /* FollowerCell.swift in Sources */,
 				74B9BEB128E08504000DBE05 /* ErrorMessage.swift in Sources */,
 				74B9BEB628E0A700000DBE05 /* GFAvatarImage.swift in Sources */,
@@ -316,6 +351,7 @@
 				74B9BE9928DF3257000DBE05 /* FollowerListVC.swift in Sources */,
 				74B9BE9728DCB35C000DBE05 /* GFTextField.swift in Sources */,
 				74B9BE9D28DF4B18000DBE05 /* GFBodyLabel.swift in Sources */,
+				74DF6CC628E5F1DE00648D5B /* GFRepoItemVC.swift in Sources */,
 				74DF6CB928E37B5000648D5B /* UserInfoVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

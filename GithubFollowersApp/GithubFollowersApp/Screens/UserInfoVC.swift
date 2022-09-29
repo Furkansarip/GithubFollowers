@@ -40,6 +40,8 @@ class UserInfoVC: UIViewController {
             case .success(let user):
                 DispatchQueue.main.async {
                     self.add(childVC: GFUserInfoHeaderVC(user: user), to: self.headerView)
+                    self.add(childVC: GFRepoItemVC(user: user), to: self.itemOne)
+                    self.add(childVC: GFFollowerItemVC(user: user), to: self.itemTwo)
                 }
                 
             case.failure(let error):
@@ -61,8 +63,8 @@ class UserInfoVC: UIViewController {
             ])
         }
         
-        itemOne.backgroundColor = .systemPink
-        itemTwo.backgroundColor = .systemBlue
+        
+        
         
         
         
