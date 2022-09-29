@@ -37,9 +37,10 @@ class GFUserInfoHeaderVC: UIViewController {
         nameLabel.text = user.name ?? ""
         locationLabel.text = user.location ?? "No location info"
         bioLabel.text = user.bio ?? "Bio not found"
-        bioLabel.numberOfLines = 3
+        bioLabel.numberOfLines = 5
         
         locationImageView.image = UIImage(systemName: "mappin.and.ellipse")
+        locationImageView.tintColor = .systemGray
     }
     
     func addSubViews(){
@@ -56,9 +57,10 @@ class GFUserInfoHeaderVC: UIViewController {
         let textImagePadding : CGFloat = 12
         locationImageView.translatesAutoresizingMaskIntoConstraints = false
         
+        
         NSLayoutConstraint.activate([
             avatarImageView.topAnchor.constraint(equalTo: view.topAnchor, constant: padding),
-            avatarImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor,constant: padding),
+            avatarImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             avatarImageView.widthAnchor.constraint(equalToConstant: 90),
             avatarImageView.heightAnchor.constraint(equalToConstant: 90),
             
