@@ -12,6 +12,7 @@ class UserInfoVC: UIViewController {
     var headerView              = UIView()
     var itemOne                 = UIView()
     var itemTwo                 = UIView()
+    let dateLabel               = GFBodyLabel(textAlignment: .center)
     var itemViews : [UIView]    = []
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,6 +43,7 @@ class UserInfoVC: UIViewController {
                     self.add(childVC: GFUserInfoHeaderVC(user: user), to: self.headerView)
                     self.add(childVC: GFRepoItemVC(user: user), to: self.itemOne)
                     self.add(childVC: GFFollowerItemVC(user: user), to: self.itemTwo)
+                    self.dateLabel.text = user.createdAt.convertToDisplayDate()
                 }
                 
             case.failure(let error):
@@ -50,7 +52,7 @@ class UserInfoVC: UIViewController {
     }
     
     func layoutUI(){
-        itemViews = [headerView,itemOne,itemTwo]
+        itemViews = [headerView,itemOne,itemTwo,dateLabel]
         let padding : CGFloat = 20
         let itemHeight : CGFloat = 140
         for itemView in itemViews {
@@ -63,12 +65,6 @@ class UserInfoVC: UIViewController {
             ])
         }
         
-        
-        
-        
-        
-        
-        
         NSLayoutConstraint.activate([
             headerView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             headerView.heightAnchor.constraint(equalToConstant: 180),
@@ -78,6 +74,9 @@ class UserInfoVC: UIViewController {
             
             itemTwo.topAnchor.constraint(equalTo: itemOne.bottomAnchor, constant: padding),
             itemTwo.heightAnchor.constraint(equalToConstant: itemHeight),
+            
+            dateLabel.topAnchor.constraint(equalTo: itemTwo.bottomAnchor, constant: padding),
+            dateLabel.heightAnchor.constraint(equalToConstant: 18)
             
         ])
     }
