@@ -6,6 +6,11 @@
 //
 
 import UIKit
+import SafariServices
+protocol UserInfoVCDelegate : class {
+    func didTapFollowers(for user : User)
+    func didTapProfile(for user : User)
+}
 
 class UserInfoVC: UIViewController {
     var username : String!
@@ -13,6 +18,7 @@ class UserInfoVC: UIViewController {
     var itemOne                 = UIView()
     var itemTwo                 = UIView()
     let dateLabel               = GFBodyLabel(textAlignment: .center)
+    weak var delegate                : FollowersListVCDelegate!
     var itemViews : [UIView]    = []
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,15 +46,25 @@ class UserInfoVC: UIViewController {
             switch result {
             case .success(let user):
                 DispatchQueue.main.async {
-                    self.add(childVC: GFUserInfoHeaderVC(user: user), to: self.headerView)
-                    self.add(childVC: GFRepoItemVC(user: user), to: self.itemOne)
-                    self.add(childVC: GFFollowerItemVC(user: user), to: self.itemTwo)
-                    self.dateLabel.text = user.createdAt.convertToDisplayDate()
+                    self.configureElementUI(with: user)
                 }
                 
             case.failure(let error):
                 self.GFAlertPresent(title: "Something wrong!", message: error.rawValue, buttonTitle: "OK")            }
         }
+    }
+    
+    func configureElementUI(with user : User){
+        let repoItemVC = GFRepoItemVC(user: user)
+        repoItemVC.delegate = self
+        
+        let followerItemVC = GFFollowerItemVC(user: user)
+        followerItemVC.delegate = self
+        
+        self.add(childVC: GFUserInfoHeaderVC(user: user), to: self.headerView)
+        self.add(childVC: repoItemVC, to: self.itemOne)
+        self.add(childVC: followerItemVC, to: self.itemTwo)
+        self.dateLabel.text = user.createdAt.convertToDisplayDate()
     }
     
     func layoutUI(){
@@ -89,4 +105,27 @@ class UserInfoVC: UIViewController {
     }
     
 
+}
+
+extension UserInfoVC : UserInfoVCDelegate {
+    func didTapFollowers(for user: User) {
+        guard user.followers != 0 else {
+            GFAlertPresent(title: "No Followers", message: "So Sad", buttonTitle: "Ok")
+            return
+        }
+        delegate.didRequestFollowers(for: user.login)
+        dismissVC()
+    }
+    
+    func didTapProfile(for user: User) {
+        guard let url = URL(string: user.htmlUrl) else
+        {
+            GFAlertPresent(title: "Invalid URL", message: "bad url", buttonTitle: "ok")
+            return
+        }
+        safariVC(with: url)
+        
+    }
+    
+    
 }
