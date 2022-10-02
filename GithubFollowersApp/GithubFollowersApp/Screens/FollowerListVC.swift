@@ -18,6 +18,7 @@ class FollowerListVC: UIViewController {
     var username: String!
     var page = 1
     var hasMoreFollowers = true
+    var isLoadingMoreFollowers = false
     var followers: [Follower] = []
     var filteredArray : [Follower] = []
     var isSearching = false
@@ -58,6 +59,7 @@ class FollowerListVC: UIViewController {
     
     @objc func addButtonTapped(){
         isLoadingView()
+       
         NetworkManager.shared.getUserInfo(for: username) { [weak self] result in
             guard let self = self else { return }
             self.dissmissLoadingView()
@@ -78,6 +80,7 @@ class FollowerListVC: UIViewController {
                 self.GFAlertPresent(title: "Error 2 ", message: error.rawValue, buttonTitle: "ok")
                 
             }
+            
         }
     }
     
@@ -95,13 +98,14 @@ class FollowerListVC: UIViewController {
     func configureSearchController() {
         let searchController                        = UISearchController()
         searchController.searchResultsUpdater       = self
-        searchController.searchBar.delegate                   = self
         searchController.searchBar.placeholder      = "Search for a username"
+        searchController.obscuresBackgroundDuringPresentation = false
         navigationItem.searchController             = searchController
     }
     
     func getFollowers(username:String,page:Int) {
         isLoadingView()
+        isLoadingMoreFollowers = true
         NetworkManager.shared.getFollowers(for: username, page: page) { [weak self] result in
             guard let self = self else {return}
             self.dissmissLoadingView()
@@ -123,6 +127,7 @@ class FollowerListVC: UIViewController {
             case .failure(let error):
                 self.GFAlertPresent(title: "Bad Stuff Happend", message: error.rawValue, buttonTitle: "Ok")
             }
+            self.isLoadingMoreFollowers = false
         }
     }
     
@@ -148,12 +153,9 @@ extension FollowerListVC : UICollectionViewDelegate {
         let offSetY = scrollView.contentOffset.y
         let contentHeight = scrollView.contentSize.height
         let height = scrollView.frame.size.height
-        
-        
-       
+
         if offSetY > contentHeight - height {
-            guard hasMoreFollowers else {return}
-            
+            guard hasMoreFollowers,!isLoadingMoreFollowers else {return}
             page += 1
             print(page)
             getFollowers(username: username, page: page)
@@ -171,19 +173,20 @@ extension FollowerListVC : UICollectionViewDelegate {
     }
 }
 
-extension FollowerListVC:UISearchResultsUpdating,UISearchBarDelegate {
+extension FollowerListVC:UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
        
-        guard let filter = searchController.searchBar.text,!filter.isEmpty else{ return }
+        guard let filter = searchController.searchBar.text,!filter.isEmpty else{
+            filteredArray.removeAll()
+            isSearching = false
+            updateData(on: followers)
+            return }
         isSearching = true
         filteredArray = followers.filter{ $0.login.lowercased().contains(filter.lowercased()) }
         updateData(on: filteredArray)
         
     }
-    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        isSearching=false
-        updateData(on: followers)
-    }
+    
     
 }
 
@@ -194,7 +197,7 @@ extension FollowerListVC : FollowersListVCDelegate {
         page            = 1
         followers.removeAll()
         filteredArray.removeAll()
-        collectionView.setContentOffset(.zero, animated: true)
+        collectionView.scrollToItem(at: IndexPath(item: 0, section: 0), at: .top, animated: true)
         getFollowers(username: username, page: 1)
         
     }
